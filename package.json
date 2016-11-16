@@ -1,0 +1,14 @@
+{
+  "name": "rest",
+  "version": "1.0.0",
+  "description": "a simple nodejs rest api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Reinhard Merfeld <reinhard.merfeld@commerzbank.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
