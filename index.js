@@ -19,6 +19,7 @@ var heroes = [
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
     next();
 });
 
@@ -86,8 +87,7 @@ app.put('/tour-of-heroes/heroes/:id', function(req, res) {
             id: req.body.id,
             name: req.body.name
         };
-        heroes.splice(idx, 1);
-        heroes.push(hero);
+        heroes[idx] = hero;
         res.json(hero);
     } else {
         res.statusCode = 404;
