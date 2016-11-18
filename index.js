@@ -48,13 +48,14 @@ app.post('/tour-of-heroes/heroes', function(req, res) {
     }
 
     let hero = {
-        id: req.body.id,
+        id: parseInt(req.body.id),
         name: req.body.name
     };
 
     if (heroes.find(h => h.id === hero.id)) {
         res.statusCode = 400;
-        res.send('Hero already exists !!!');
+        res.statusText = 'Hero already exists !!!';
+        res.send(res.statusText);
     } else {
         heroes.push(hero);
         res.json(hero);
